@@ -1,6 +1,5 @@
 from ensurepip import bootstrap
 from flask import Flask, render_template,jsonify
-#import bootstrap
 import requests, json
 import models
 
@@ -9,17 +8,14 @@ url = "https://api.openbrewerydb.org/breweries?by_state=texas"
 response = requests.request("GET", url)
 breweriesTemp = json.loads(response.text)
 
+
+#formatting data into a brewery model
 breweries =  []
 for b in breweriesTemp:
     breweries.append(models.breweryModel(b))
 
 
-
-# for brewery in breweries:
-#     thisBrewery = models.breweryModel(brewery)
-#     print(thisBrewery.breweryName)
-
-
+#creating flask server and running it
 app = Flask(__name__)
 
 @app.route('/')
