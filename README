@@ -1,0 +1,5 @@
+View local breweries in Texas in a clean and efficient way!
+
+Using the openbrewerydb api( https://www.openbrewerydb.org/ ) information is gathered from the breweries across America.
+
+It's then filtered down to just the ones in Texas and displayed nicely on a webpage.
